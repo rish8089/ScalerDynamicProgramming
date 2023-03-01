@@ -12,6 +12,8 @@ public class Stairs {
         BufferedReader br=new BufferedReader(isr);
         int A=Integer.parseInt(br.readLine());
         System.out.println(obj.climbStairs(A));
+        int __=2;
+        System.out.println(__);
     }
 
     public int climbStairs(int A) {

@@ -1,7 +1,5 @@
 package Hard;
 
-import Medium.LongestCommonSubsequence;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

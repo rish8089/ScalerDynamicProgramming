@@ -1,0 +1,81 @@
+Problem Description
+
+There is a rod of length A lying on x-axis with its left end at x = 0 and right end at x = A. Now, there are M weak points on this rod denoted by positive integer values(all less than A) B1, B2, …, BM.
+
+You have to cut rod at all these weak points. You can perform these cuts in any order.
+
+After a cut, rod gets divided into two smaller sub-rods. Cost of making a cut is the length of the sub-rod in which you are making a cut.
+
+Your aim is to minimise this cost. Return an array denoting the sequence in which you will make cuts. If two different sequences of cuts give same cost, return the lexicographically smallest.
+
+NOTE: Sequence a1, a2 ,..., an is lexicographically smaller than b1, b2 ,..., bm, if and only if at the first i where ai and bi differ, ai < bi, or if no such i found, then n < m.
+
+
+
+Problem Constraints
+
+1 <= A <= 109.
+1 <= M <= 100
+1 <= B[i] < A
+
+
+
+Input Format
+
+First argument is an integer A.
+Second argument is an integer array B.
+
+
+
+Output Format
+
+Return an array denoting denoting the sequence in which you will make cuts.
+
+
+
+Example Input
+
+Input 1:
+
+ A = 6
+ B = [1, 2, 5]
+Input 2:
+
+ A = 5
+ B = [1, 3]
+
+
+Example Output
+
+Output 1:
+
+ [2, 1, 5].
+Output 2:
+
+ [3, 1]
+
+
+Example Explanation
+
+Explanation 1:
+
+ If we make cuts in order [1, 2, 5], let us see what total cost would be.
+ For first cut, the length of rod is 6.
+ For second cut, the length of sub-rod in which we are making cut is 5(since we already have made a cut at 1).
+ For third cut, the length of sub-rod in which we are making cut is 4(since we already have made a cut at 2).
+ So, total cost is 6 + 5 + 4.
+
+ Cut order         | Sum of cost
+(lexicographically | of each cut
+ sorted)           |
+___________________|_______________
+[1, 2, 5]          | 6 + 5 + 4 = 15
+[1, 5, 2]          | 6 + 5 + 4 = 15
+[2, 1, 5]          | 6 + 2 + 4 = 12
+[2, 5, 1]          | 6 + 4 + 2 = 12
+[5, 1, 2]          | 6 + 5 + 4 = 15
+[5, 2, 1]          | 6 + 5 + 2 = 13
+
+Explanation 2:
+
+ Minimum cost to cut is given by order [3, 1] i.e. 8.

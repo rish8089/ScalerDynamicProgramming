@@ -1,0 +1,69 @@
+Problem Description
+
+Given a matrix of integers A of size N x 3 representing the dimensions of N rectangular 3-D boxes, where A[i][0] represents the height of the ith box, A[i][1] represents the widht of the ith box and A[i][2] represents the length of the ith box.
+You want to create a stack of boxes which is as tall as possible, but you can only stack a box on top of another box if the dimensions of the 2-D base of the lower box are each strictly larger than those of the 2-D base of the higher box. You can rotate a box so that any side functions as its base. It is also allowable to use multiple instances of the same type of box.
+
+Find and return the maximum height of stack achievable.
+
+
+
+Problem Constraints
+
+1 <= N <= 1000
+1 <= A[i][0], A[i][1], A[i][2] <= 1e6
+
+
+Input Format
+
+The only argument given is the integer matrix A.
+
+
+Output Format
+
+Return a single integer, the maximum height of stack achievable.
+
+
+Example Input
+
+Input 1:
+A = [   [4, 6, 7]
+        [1, 2, 3]
+        [4, 5, 6]
+        [1, 2, 3]   ]
+Input 2:
+
+A = [   [4, 5, 6]
+        [10, 12, 14]    ]
+
+
+Example Output
+
+Output 1:
+60
+Output 2:
+
+34
+
+
+Example Explanation
+
+Explanation 1:
+Following are all rotations of the boxes in decreasing order of base area:
+        10 x 12 x 32
+        12 x 10 x 32
+        32 x 10 x 12
+        4 x 6 x 7
+        4 x 5 x 6
+        6 x 4 x 7
+        5 x 4 x 6
+        7 x 4 x 6
+        6 x 4 x 5
+        1 x 2 x 3
+        2 x 1 x 3
+        3 x 1 x 2
+
+        The height 60 is obtained by boxes
+        [ [3, 1, 2], [1, 2, 3], [6, 4, 5], [4, 5, 6], [4, 6, 7], [32, 10, 12], [10, 12, 32] ]
+Explanation 2:
+
+Similarly, the answer for this case would be 34
